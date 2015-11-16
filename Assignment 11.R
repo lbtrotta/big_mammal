@@ -22,10 +22,7 @@ extant_mass <- mean(mammal_sizes$combined_mass[mammal_sizes$status=="extant"], n
 ##mean mass of extinct species
 extinct_mass <- mean(mammal_sizes$combined_mass[mammal_sizes$status=="extinct"], na.rm=T)
 
-Repeat the analysis but this time compare the mean masses within each of the different continents (dplyr would be one way to do this). Export your results to a CSV file where the first entry on each line is the continent, the second entry is the average mass of the extant species on that continent, and the third entry is the average mass of the extinct species on that continent (spread() from tidyr is a handy way to convert the standard dplyr output to this form). Call the file
-
-
-
+##mass of extinct and extant species on all continents
 avg_mass_by_continent <- mammal_sizes %>%
                  filter(status !=('historical')) %>%
                  filter(status !=('introduction')) %>%
